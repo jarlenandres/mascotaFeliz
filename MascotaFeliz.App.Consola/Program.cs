@@ -19,16 +19,19 @@ namespace MascotaFeliz.App.Consola
             //BuscarDueno(1);
             //ListarDuenos();
             //EliminarDueno(1);
+            //ListarDuenoFiltro();
 
             //AddMascota();
             //BuscarMascota(1);
             //ListarMascotas();
             //EliminarMascota(1);
+            //ListarMascotaFiltro();
 
             //AddVeterinario();
             //BuscarVeterinario(2);
             //ListarVeterinarios();
             //EliminarVeterinario(2);
+            //ListarVeterinarioFiltro();
             
         }
 
@@ -70,6 +73,16 @@ namespace MascotaFeliz.App.Consola
             Console.WriteLine("Dieño eliminado");
         }
 
+        //Filtar Dueño por texto
+        private static void ListarDuenoFiltro()
+        {
+            var duenos = _repoDueno.GetDuenosPorFiltro("El");
+            foreach (Dueno d in duenos)
+            {
+                Console.WriteLine(d.Nombres +" "+ d.Apellidos);
+            }
+        }
+
         //Agregar Mascota
         private static void AddMascota()
         {
@@ -105,6 +118,16 @@ namespace MascotaFeliz.App.Consola
         {
             _repoMascota.DeleteMascota(idMascota);
             Console.WriteLine("Mascota eliminada");
+        }
+
+        //Filtrar Mascota por texto
+        private static void ListarMascotaFiltro()
+        {
+            var mascotas = _repoMascota.GetMascotasPorFiltro("Misi");
+            foreach (Mascota m in mascotas)
+            {
+                Console.WriteLine(m.Nombre);
+            }
         }
 
         //Agregar Veterinario
@@ -143,6 +166,16 @@ namespace MascotaFeliz.App.Consola
         {
             _repoVeterinario.DeleteVeterinario(idVeterinario);
             Console.WriteLine("Veterinario elminado");
+        }
+
+        //Filtrar Veterinario por texto
+        private static void ListarVeterinarioFiltro()
+        {
+            var veterinarios = _repoVeterinario.GetVeterinariosPorFiltro("Javier");
+            foreach (Veterinario v in veterinarios)
+            {
+                Console.WriteLine(v.Nombres +" "+ v.Apellidos);
+            }
         }
     }
 }
