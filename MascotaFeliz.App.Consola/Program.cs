@@ -8,32 +8,25 @@ namespace MascotaFeliz.App.Consola
     class Program
     { 
         private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
-
         private static IRepositorioMascota _repoMascota = new RepositorioMascota(new Persistencia.AppContext());
-
         private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
 
-            //Agregar Dueño
             //AddDueno();
-
-            //Buscar Dueño
             //BuscarDueno(1);
+            //ListarDuenos();
 
-            //Agregar Mascota
             //AddMascota();
-
-            //Buscar Dueño
             //BuscarMascota(1);
+            //ListarMascotas();
 
-            //Agregar Veterinario
             //AddVeterinario();
-
-            //Buscar Veterinario
-            BuscarVeterinario(2);
+            //BuscarVeterinario(2);
+            //ListarVeterinarios();
+            
         }
 
         //Agregar Dueño
@@ -41,12 +34,11 @@ namespace MascotaFeliz.App.Consola
         {
             var dueno = new Dueno
             {
-                //Cedula = "1212",
-                Nombres = "Juan",
-                Apellidos = "Sin Miedo",
-                Direccion = "Bajo un puente",
-                Telefono = "1234567891",
-                Correo = "juansinmiedo@gmail.com"
+                Nombres = "El",
+                Apellidos = "profe",
+                Direccion = "Barranquilla",
+                Telefono = "02312230",
+                Correo = "elprofe@gmail.com"
             };
             _repoDueno.AddDueno(dueno);
         }
@@ -58,15 +50,25 @@ namespace MascotaFeliz.App.Consola
             Console.WriteLine(dueno.Nombres + " "+ dueno.Apellidos);
         }
 
+        //Listar Dueños
+        private static void ListarDuenos()
+        {
+            var duenos = _repoDueno.GetAllDuenos();
+            foreach (Dueno d in duenos)
+            {
+                Console.WriteLine(d.Nombres);
+            }
+        }
+
         //Agregar Mascota
         private static void AddMascota()
         {
             var mascota = new Mascota
             {
-                Nombre = "Firulay",
-                Color = "Blanco",
-                Especie = "Golden",
-                Raza = "Labrador",
+                Nombre = "Misi",
+                Color = "negro",
+                Especie = "lindo",
+                Raza = "Persa",
             };
             _repoMascota.AddMascota(mascota);
         }
@@ -78,26 +80,52 @@ namespace MascotaFeliz.App.Consola
             Console.WriteLine(mascota.Nombre + " "+ mascota.Raza);
         }
 
+        //Listar Mascota
+        private static void ListarMascotas()
+        {
+            var mascotas = _repoMascota.GetAllMascotas();
+            foreach (Mascota m in mascotas)
+            {
+                Console.WriteLine(m.Nombre);
+            }
+        }
+
         //Agregar Veterinario
         private static void AddVeterinario()
         {
             var veterinario = new Veterinario
             {
-                Nombres = "Carlos",
-                Apellidos = "Moreno",
-                Direccion = "de bajo del río",
-                Telefono = "09080907",
-                TerjetaProfesional = "2130459"
+                Nombres = "Javier",
+                Apellidos = "Vasquez",
+                Direccion = "Colombia",
+                Telefono = "33333333",
+                TerjetaProfesional = "002334"
             };
             _repoVeterinario.AddVeterinario(veterinario);
         }
 
-        //Buscar Mascota
+        //Buscar Veterinario
         private static void BuscarVeterinario(int idVeterinario)
         {
             var veterinario =  _repoVeterinario.GetVeterinario(idVeterinario);
             Console.WriteLine(veterinario.Nombres + " "+ veterinario.TerjetaProfesional);
         }
+
+        //Listar Veterinario
+        private static void ListarVeterinarios()
+        {
+            var veterinarios = _repoVeterinario.GetAllVeterinarios();
+            foreach (Veterinario v in veterinarios)
+            {
+                Console.WriteLine(v.Nombres);
+            }
+        }
+
+        
+
+        
+
+        
     }
 }
 

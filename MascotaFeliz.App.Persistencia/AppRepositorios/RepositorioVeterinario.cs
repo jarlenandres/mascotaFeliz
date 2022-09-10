@@ -46,10 +46,10 @@ namespace MascotaFeliz.App.Persistencia
 
         public IEnumerable<Veterinario> GetVeterinariosPorFiltro(string filtro)
         {
-            var veterinarios = GetAllVeterinarios(); // Obtiene todos los saludos
-            if (veterinarios != null)  //Si se tienen saludos
+            var veterinarios = GetAllVeterinarios();
+            if (veterinarios != null) 
             {
-                if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
+                if (!String.IsNullOrEmpty(filtro)) 
                 {
                     veterinarios = veterinarios.Where(v => v.Nombres.Contains(filtro));
                 }
