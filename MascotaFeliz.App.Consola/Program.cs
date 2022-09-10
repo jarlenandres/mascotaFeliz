@@ -18,14 +18,17 @@ namespace MascotaFeliz.App.Consola
             //AddDueno();
             //BuscarDueno(1);
             //ListarDuenos();
+            //EliminarDueno(1);
 
             //AddMascota();
             //BuscarMascota(1);
             //ListarMascotas();
+            //EliminarMascota(1);
 
             //AddVeterinario();
             //BuscarVeterinario(2);
             //ListarVeterinarios();
+            //EliminarVeterinario(2);
             
         }
 
@@ -47,7 +50,7 @@ namespace MascotaFeliz.App.Consola
         private static void BuscarDueno(int idDueno)
         {
             var dueno = _repoDueno.GetDueno(idDueno);
-            Console.WriteLine(dueno.Nombres + " "+ dueno.Apellidos);
+            Console.WriteLine(dueno.Nombres +" "+ dueno.Apellidos);
         }
 
         //Listar Dueños
@@ -58,6 +61,13 @@ namespace MascotaFeliz.App.Consola
             {
                 Console.WriteLine(d.Nombres);
             }
+        }
+
+        //Eliminar Dueño
+        private static void EliminarDueno(int idDueno)
+        {
+            _repoDueno.DeleteDueno(idDueno);
+            Console.WriteLine("Dieño eliminado");
         }
 
         //Agregar Mascota
@@ -90,6 +100,13 @@ namespace MascotaFeliz.App.Consola
             }
         }
 
+        //Eliminar Mascota
+        private static void EliminarMascota(int idMascota)
+        {
+            _repoMascota.DeleteMascota(idMascota);
+            Console.WriteLine("Mascota eliminada");
+        }
+
         //Agregar Veterinario
         private static void AddVeterinario()
         {
@@ -108,7 +125,7 @@ namespace MascotaFeliz.App.Consola
         private static void BuscarVeterinario(int idVeterinario)
         {
             var veterinario =  _repoVeterinario.GetVeterinario(idVeterinario);
-            Console.WriteLine(veterinario.Nombres + " "+ veterinario.TerjetaProfesional);
+            Console.WriteLine(veterinario.Nombres +" "+ veterinario.TerjetaProfesional);
         }
 
         //Listar Veterinario
@@ -121,11 +138,12 @@ namespace MascotaFeliz.App.Consola
             }
         }
 
-        
-
-        
-
-        
+        //Eliminar Veterinario
+        private static void EliminarVeterinario(int idVeterinario)
+        {
+            _repoVeterinario.DeleteVeterinario(idVeterinario);
+            Console.WriteLine("Veterinario elminado");
+        }
     }
 }
 
