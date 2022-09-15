@@ -1,0 +1,25 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaDuenosModel
+@{
+}
+
+<h1>Listado de dueños</h1>
+<!--BUSCADOR-->
+<form class="buscar">
+    <input type="text" placeholder="Buscar.." name="buscar">
+    <button type="submit">Buscar</i></button>
+</form>    
+<!--BUSCADOR FIN-->  
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+    </tr>
+    @foreach (var dueno in Model.listaDuenos)
+    {
+    <tr>
+        <td>@dueno.Nombres</td>
+        <td>@dueno.Apellidos</td>
+    </tr>   
+    }
+</table>
