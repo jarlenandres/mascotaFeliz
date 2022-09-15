@@ -143,7 +143,7 @@ ul {margin:0;
 	}
 	.button-1:hover{color:#ef324e;}
 /******************************************************************/
-.clear {clear:both; line-height:0; font-size:0; width:100%;}
+
 .wrapper, .wrapper-extra, .extra-wrap{overflow:hidden;}
 .wrapper-after:after{
  clear:both;
