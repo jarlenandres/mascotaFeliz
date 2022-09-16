@@ -11,6 +11,7 @@ namespace MascotaFeliz.App.Consola
         private static IRepositorioMascota _repoMascota = new RepositorioMascota(new Persistencia.AppContext());
         private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
         private static IRepositorioHistoria _repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
+        private static IRepositorioVisitaPyP _repoVisitaPyP = new RepositorioVisitaPyP(new Persistencia.AppContext());
 
         static void Main(string[] args)
         {
@@ -21,7 +22,7 @@ namespace MascotaFeliz.App.Consola
             //ListarDuenos();
             //EliminarDueno(1);
             //ListarDuenoFiltro();
-            //ActualizarDueno(3);
+            //EditarDueno(3);
 
             
             //AddMascota();
@@ -29,17 +30,22 @@ namespace MascotaFeliz.App.Consola
             //ListarMascotas();
             //EliminarMascota(1);
             //ListarMascotaFiltro();
-            //ActualizarMascota(2);
+            //EditarMascota(2);
 
             //AddVeterinario();
             //BuscarVeterinario(2);
             //ListarVeterinarios();
             //EliminarVeterinario(2);
             //ListarVeterinarioFiltro();
-            //ActualizarVeterinario(6);
+            //EditarVeterinario(6);
 
             //AddHistoria();
+
             //AddVisitaPyP();
+            //BuscarVisitaPyP(1);
+            //ListarVisitaPyP();
+            EliminarVisitaPyP(1);
+            //EditarVisitaPyP(1);
             
         }
 
@@ -91,8 +97,8 @@ namespace MascotaFeliz.App.Consola
             }
         }
 
-        //Actualizar Dueño
-        private static void ActualizarDueno(int idDueno)
+        //Editar Dueño
+        private static void EditarDueno(int idDueno)
         {
             var duenoEncontrado = _repoDueno.GetDueno(idDueno);
             if (duenoEncontrado != null)
@@ -152,8 +158,8 @@ namespace MascotaFeliz.App.Consola
                 Console.WriteLine(m.Nombre);
             }
         }
-        //Actualizar Mascota
-        private static void ActualizarMascota(int idMascota)
+        //Editar Mascota
+        private static void EditarMascota(int idMascota)
         {
             var mascotaEncontrado = _repoMascota.GetMascota(idMascota);
             if (mascotaEncontrado != null)
@@ -213,8 +219,8 @@ namespace MascotaFeliz.App.Consola
                 Console.WriteLine(v.Nombres +" "+ v.Apellidos);
             }
         }
-        //Actualizar Veterinario
-        private static void ActualizarVeterinario(int idVeterinario)
+        //Editar Veterinario
+        private static void EditarVeterinario(int idVeterinario)
         {
             var veterinarioEncontrado = _repoVeterinario.GetVeterinario(idVeterinario);
             if (veterinarioEncontrado != null)
@@ -254,7 +260,43 @@ namespace MascotaFeliz.App.Consola
 
             };
             _repoVisitaPyP.AddVisitaPyP(visitaPyP);
-            
+        }
+        //Buscar VisitaPyP
+        private static void BuscarVisitaPyP(int idVisitaPyP)
+        {
+            var visitaPyP = _repoVisitaPyP.GetVisitaPyP(idVisitaPyP);
+            Console.WriteLine(visitaPyP.Id +" "+ visitaPyP.FechaVisita);
+        }
+        //Listar VisitaPyP
+        private static void ListarVisitaPyP()
+        {
+            var visitaPyP = _repoVisitaPyP.GetAllVisitasPyP();
+            foreach (VisitaPyP v in visitaPyP)
+            {
+                Console.WriteLine(v.FechaVisita);
+            }
+        }
+         //Eliminar VisitaPyP
+        private static void EliminarVisitaPyP(int idVisitaPyP)
+        {
+            _repoVisitaPyP.DeleteVisitaPyP(idVisitaPyP);
+            Console.WriteLine("VisitaPyP eliminada");
+        }
+        //Editar VisitaPyP
+        private static void EditarVisitaPyP(int idVisitaPyP)
+        {
+            var visitaPyPEncontrado = _repoVisitaPyP.GetVisitaPyP(idVisitaPyP);
+            if (visitaPyPEncontrado != null)
+            {
+                visitaPyPEncontrado.FechaVisita = new DateTime(2022,09,16);
+                visitaPyPEncontrado.Temperatura = 20.5F;
+                visitaPyPEncontrado.Peso = 30.3F;
+                visitaPyPEncontrado.FrecuenciaRespiratoria = 50.2F;
+                visitaPyPEncontrado.FrecuenciaCardiaca = 15.5F;
+                visitaPyPEncontrado.EstadoAnimo= "Triste";
+                visitaPyPEncontrado.Recomendaciones= "Vacaciones";
+            }
+            _repoVisitaPyP.UpdateVisitaPyP(visitaPyPEncontrado);
         }
 
     }
