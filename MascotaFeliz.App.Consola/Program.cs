@@ -39,6 +39,7 @@ namespace MascotaFeliz.App.Consola
             //ActualizarVeterinario(6);
 
             //AddHistoria();
+            //AddVisitaPyP();
             
         }
 
@@ -235,6 +236,25 @@ namespace MascotaFeliz.App.Consola
                 FechaInicial = new DateTime(2020,09,16)
             };
             _repoHistoria.AddHistoria(historia);
+        }
+        
+        //Agregar VisitaPyP
+        private static void AddVisitaPyP()
+        {
+            var visitaPyP = new VisitaPyP
+
+            {
+                FechaVisita= new DateTime(2022,09,15),
+                Temperatura= 37.2F,
+                Peso =55.3F,
+                FrecuenciaRespiratoria=33.2F,
+                FrecuenciaCardiaca=80.5F,
+                EstadoAnimo="Alegre",
+                Recomendaciones="Reposo en casa",
+
+            };
+            _repoVisitaPyP.AddVisitaPyP(visitaPyP);
+            
         }
 
     }
