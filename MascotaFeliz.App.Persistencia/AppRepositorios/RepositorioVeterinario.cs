@@ -67,9 +67,9 @@ namespace MascotaFeliz.App.Persistencia
             return _appContext.Veterinarios.FirstOrDefault(v => v.Id == idVeterinario);
         }
 
-        public Veterinario UpdateVeterinario(Veterinario veterinario)
+ public Veterinario UpdateVeterinario(Veterinario veterinario)
         {
-            var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(v => v.Id == veterinario.Id);
+            var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(d => d.Id == veterinario.Id);
             if (veterinarioEncontrado != null)
             {
                 veterinarioEncontrado.Nombres = veterinario.Nombres;

@@ -21,18 +21,22 @@ namespace MascotaFeliz.App.Consola
             //ListarDuenos();
             //EliminarDueno(1);
             //ListarDuenoFiltro();
+            //ActualizarDueno(3);
+
             
             //AddMascota();
             //BuscarMascota(1);
             //ListarMascotas();
             //EliminarMascota(1);
             //ListarMascotaFiltro();
+            //ActualizarMascota(2);
 
             //AddVeterinario();
             //BuscarVeterinario(2);
             //ListarVeterinarios();
             //EliminarVeterinario(2);
             //ListarVeterinarioFiltro();
+            //ActualizarVeterinario(6);
 
             //AddHistoria();
             
@@ -96,6 +100,21 @@ namespace MascotaFeliz.App.Consola
             }
         }
 
+        //Actualizar Dueño
+        private static void ActualizarDueno(int idDueno)
+        {
+            var duenoEncontrado = _repoDueno.GetDueno(idDueno);
+            if (duenoEncontrado != null)
+            {
+                duenoEncontrado.Nombres = "Pedro";
+                duenoEncontrado.Apellidos = "El escamoso";
+                duenoEncontrado.Direccion = "Cl Z # Z - Z";
+                duenoEncontrado.Telefono = "5555555558";
+                duenoEncontrado.Correo = "Pedro@gmail.com";
+            }
+            _repoDueno.UpdateDueno(duenoEncontrado);
+        }
+
         //Agregar Mascota
         private static void AddMascota()
         {
@@ -141,6 +160,19 @@ namespace MascotaFeliz.App.Consola
             {
                 Console.WriteLine(m.Nombre);
             }
+        }
+        //Actualizar Mascota
+        private static void ActualizarMascota(int idMascota)
+        {
+            var mascotaEncontrado = _repoMascota.GetMascota(idMascota);
+            if (mascotaEncontrado != null)
+            {
+                mascotaEncontrado.Nombre = "Pepito";
+                mascotaEncontrado.Color = "Azul";
+                mascotaEncontrado.Especie = "pez";
+                mascotaEncontrado.Raza = "Pez Dorado";
+            }
+            _repoMascota.UpdateMascota(mascotaEncontrado);
         }
 
         //Agregar Veterinario
@@ -190,6 +222,21 @@ namespace MascotaFeliz.App.Consola
                 Console.WriteLine(v.Nombres +" "+ v.Apellidos);
             }
         }
+        //Actualizar Veterinario
+        private static void ActualizarVeterinario(int idVeterinario)
+        {
+            var veterinarioEncontrado = _repoVeterinario.GetVeterinario(idVeterinario);
+            if (veterinarioEncontrado != null)
+            {
+                veterinarioEncontrado.Nombres = "Diego";
+                veterinarioEncontrado.Apellidos = "Amalla";
+                veterinarioEncontrado.Direccion = "en las nubes";
+                veterinarioEncontrado.Telefono = "5555555";
+                veterinarioEncontrado.TerjetaProfesional = "GHY779";
+            }
+            _repoVeterinario.UpdateVeterinario(veterinarioEncontrado);
+        }
+
     }
 }
 
