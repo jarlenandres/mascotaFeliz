@@ -218,6 +218,35 @@ body {
     text-align: center;
  }
 
+ .clear {clear:both; line-height:0; font-size:0; width:100%;}
+
+ .block{
+	width:236px;
+	float:left;
+	position:relative;
+	overflow:hidden;
+	}
+	.block .panel{background:#d40b57;}
+.block-1{
+	width:232px;
+	float:left;
+	position:relative;
+	overflow:hidden;
+	}
+	.block-1 .panel{background:#f55169;}
+.block-2{
+	width:236px;
+	float:left;
+	position:relative;
+	overflow:hidden;
+	}
+	.block-2 .panel{background:#fb874e;}
+.block-3{
+	width:236px;
+	float:left;
+	position:relative;
+	overflow:hidden;
+	}
 
  /* ***BUSCADOR FURMULARIO******/
  form.buscar input[type=text] {
