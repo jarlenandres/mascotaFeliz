@@ -42,16 +42,6 @@ namespace MascotaFeliz.App.Consola
             
         }
 
-        //Agregar Historia
-        private static void AddHistoria()
-        {
-            var historia = new Historia
-            {
-                FechaInicial = new DateTime(2020,09,16)
-            };
-            _repoHistoria.AddHistoria(historia);
-        }
-
         //Agregar Dueño
         private static void AddDueno()
         {
@@ -235,6 +225,16 @@ namespace MascotaFeliz.App.Consola
                 veterinarioEncontrado.TerjetaProfesional = "GHY779";
             }
             _repoVeterinario.UpdateVeterinario(veterinarioEncontrado);
+        }
+
+        //Agregar Historia
+        private static void AddHistoria()
+        {
+            var historia = new Historia
+            {
+                FechaInicial = new DateTime(2020,09,16)
+            };
+            _repoHistoria.AddHistoria(historia);
         }
 
     }
