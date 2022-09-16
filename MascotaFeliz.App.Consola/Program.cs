@@ -10,6 +10,7 @@ namespace MascotaFeliz.App.Consola
         private static IRepositorioDueno _repoDueno = new RepositorioDueno(new Persistencia.AppContext());
         private static IRepositorioMascota _repoMascota = new RepositorioMascota(new Persistencia.AppContext());
         private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
+        private static IRepositorioHistoria _repoHistoria = new RepositorioHistoria(new Persistencia.AppContext());
 
         static void Main(string[] args)
         {
@@ -32,7 +33,19 @@ namespace MascotaFeliz.App.Consola
             //ListarVeterinarios();
             //EliminarVeterinario(2);
             //ListarVeterinarioFiltro();
+
+            //AddHistoria();
             
+        }
+
+        //Agregar Historia
+        private static void AddHistoria()
+        {
+            var historia = new Historia
+            {
+                FechaInicial = new DateTime(2020,09,16)
+            };
+            _repoHistoria.AddHistoria(historia);
         }
 
         //Agregar Dueño
