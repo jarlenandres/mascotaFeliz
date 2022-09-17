@@ -172,3 +172,6 @@ C:\Mascotas2\mascotaFeliz\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Masc
 C:\Mascotas2\mascotaFeliz\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\MascotaFeliz.App.Frontend.genruntimeconfig.cache
 C:\Mascotas2\mascotaFeliz\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Duenos\DetallesDuenos.cshtml.g.cs
 C:\Mascotas2\mascotaFeliz\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Duenos\EditarDuenos.cshtml.g.cs
+C:\Mascotas2\mascotaFeliz\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\DetallesVeterinarios.cshtml.g.cs
+C:\Mascotas2\mascotaFeliz\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\EditarVeterinarios.cshtml.g.cs
+C:\Mascotas2\mascotaFeliz\MascotaFeliz.App.Frontend\obj\Debug\netcoreapp3.1\Razor\Pages\Veterinarios\ListaVeterinario.cshtml.g.cs
