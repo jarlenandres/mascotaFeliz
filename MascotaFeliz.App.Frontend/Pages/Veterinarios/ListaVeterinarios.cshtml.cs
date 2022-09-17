@@ -9,13 +9,13 @@ using MascotaFeliz.App.Persistencia;
 
 namespace MascotaFeliz.App.Frontend.Pages
 {
-    public class ListaVeterinarioModel : PageModel
+    public class ListaVeterinariosModel : PageModel
     {
-       private readonly IRepositorioVeterinario _repoVeterinario;
+        private readonly IRepositorioVeterinario _repoVeterinario;
 
         public IEnumerable<Veterinario> listaVeterinarios {get; set;}
 
-        public ListaVeterinarioModel()
+        public ListaVeterinariosModel()
         {
             this._repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
         }

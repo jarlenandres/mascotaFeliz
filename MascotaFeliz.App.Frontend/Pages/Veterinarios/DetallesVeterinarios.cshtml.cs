@@ -11,7 +11,7 @@ namespace MascotaFeliz.App.Frontend.Pages
 {
     public class DetallesVeterinariosModel : PageModel
     {
-    private readonly IRepositorioVeterinario _repoVeterinario;
+        private readonly IRepositorioVeterinario _repoVeterinario;
         public Veterinario veterinario {get;set;}
         public DetallesVeterinariosModel()
         {
