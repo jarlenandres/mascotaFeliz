@@ -9,7 +9,7 @@ namespace MascotaFeliz.App.Persistencia
     public class RepositorioVeterinario : IRepositorioVeterinario
     {
         /// <summary>
-        /// Referencia al contexto de Veterinario
+        /// Referencia al contexto de Dueno
         /// </summary>
         private readonly AppContext _appContext;
         /// <summary>
@@ -32,7 +32,7 @@ namespace MascotaFeliz.App.Persistencia
 
         public void DeleteVeterinario(int idVeterinario)
         {
-            var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(v => v.Id == idVeterinario);
+            var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(d => d.Id == idVeterinario);
             if (veterinarioEncontrado == null)
                 return;
             _appContext.Veterinarios.Remove(veterinarioEncontrado);
@@ -46,12 +46,12 @@ namespace MascotaFeliz.App.Persistencia
 
         public IEnumerable<Veterinario> GetVeterinariosPorFiltro(string filtro)
         {
-            var veterinarios = GetAllVeterinarios();
-            if (veterinarios != null) 
+            var veterinarios = GetAllVeterinarios(); // Obtiene todos los saludos
+            if (veterinarios != null)  //Si se tienen saludos
             {
-                if (!String.IsNullOrEmpty(filtro)) 
+                if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
                 {
-                    veterinarios = veterinarios.Where(v => v.Nombres.Contains(filtro));
+                    veterinarios = veterinarios.Where(s => s.Nombres.Contains(filtro));
                 }
             }
             return veterinarios;
@@ -64,10 +64,10 @@ namespace MascotaFeliz.App.Persistencia
 
         public Veterinario GetVeterinario(int idVeterinario)
         {
-            return _appContext.Veterinarios.FirstOrDefault(v => v.Id == idVeterinario);
+            return _appContext.Veterinarios.FirstOrDefault(d => d.Id == idVeterinario);
         }
 
- public Veterinario UpdateVeterinario(Veterinario veterinario)
+        public Veterinario UpdateVeterinario(Veterinario veterinario)
         {
             var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(d => d.Id == veterinario.Id);
             if (veterinarioEncontrado != null)
@@ -76,7 +76,7 @@ namespace MascotaFeliz.App.Persistencia
                 veterinarioEncontrado.Apellidos = veterinario.Apellidos;
                 veterinarioEncontrado.Direccion = veterinario.Direccion;
                 veterinarioEncontrado.Telefono = veterinario.Telefono;
-                veterinarioEncontrado.TerjetaProfesional = veterinario.TerjetaProfesional;
+                veterinarioEncontrado.TarjetaProfesional = veterinario.TarjetaProfesional;
                 _appContext.SaveChanges();
             }
             return veterinarioEncontrado;

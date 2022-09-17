@@ -9,7 +9,7 @@ namespace MascotaFeliz.App.Persistencia
     public class RepositorioMascota : IRepositorioMascota
     {
         /// <summary>
-        /// Referencia al contexto de Mascota
+        /// Referencia al contexto de Dueno
         /// </summary>
         private readonly AppContext _appContext;
         /// <summary>
@@ -46,12 +46,12 @@ namespace MascotaFeliz.App.Persistencia
 
         public IEnumerable<Mascota> GetMascotasPorFiltro(string filtro)
         {
-            var mascotas = GetAllMascotas(); 
-            if (mascotas != null)  
+            var mascotas = GetAllMascotas(); // Obtiene todos los saludos
+            if (mascotas != null)  //Si se tienen saludos
             {
-                if (!String.IsNullOrEmpty(filtro)) 
+                if (!String.IsNullOrEmpty(filtro)) // Si el filtro tiene algun valor
                 {
-                    mascotas = mascotas.Where(m => m.Nombre.Contains(filtro));
+                    mascotas = mascotas.Where(s => s.Nombre.Contains(filtro));
                 }
             }
             return mascotas;
@@ -64,12 +64,12 @@ namespace MascotaFeliz.App.Persistencia
 
         public Mascota GetMascota(int idMascota)
         {
-            return _appContext.Mascotas.FirstOrDefault(m => m.Id == idMascota);
+            return _appContext.Mascotas.FirstOrDefault(d => d.Id == idMascota);
         }
 
         public Mascota UpdateMascota(Mascota mascota)
         {
-            var mascotaEncontrado = _appContext.Mascotas.FirstOrDefault(m => m.Id == mascota.Id);
+            var mascotaEncontrado = _appContext.Mascotas.FirstOrDefault(d => d.Id == mascota.Id);
             if (mascotaEncontrado != null)
             {
                 mascotaEncontrado.Nombre = mascota.Nombre;
@@ -82,3 +82,4 @@ namespace MascotaFeliz.App.Persistencia
         }     
     }
 }
+

@@ -6,7 +6,6 @@ using MascotaFeliz.App.Dominio;
 
 namespace MascotaFeliz.App.Persistencia
 {
-    //Interfaz de dueño
     public interface IRepositorioDueno
     {
         IEnumerable<Dueno> GetAllDuenos();
@@ -14,7 +13,6 @@ namespace MascotaFeliz.App.Persistencia
         Dueno UpdateDueno(Dueno dueno);
         void DeleteDueno(int idDueno);
         Dueno GetDueno(int idDueno);
-        //Filtrar dueños por texto ej: nombre
         IEnumerable<Dueno> GetDuenosPorFiltro(string filtro);
     }
 }

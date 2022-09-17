@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-
 namespace MascotaFeliz.App.Dominio
 {
     public class Historia

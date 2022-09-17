@@ -36,7 +36,7 @@ namespace MascotaFeliz.App.Consola
             //ListarVeterinarios();
             //EliminarVeterinario(2);
             //ListarVeterinarioFiltro();
-            //EditarVeterinario(6);
+            EditarVeterinario(6);
 
             //AddHistoria();
 
@@ -180,7 +180,7 @@ namespace MascotaFeliz.App.Consola
                 Apellidos = "Vasquez",
                 Direccion = "Colombia",
                 Telefono = "33333333",
-                TerjetaProfesional = "002334"
+                TarjetaProfesional = "002334"
             };
             _repoVeterinario.AddVeterinario(veterinario);
         }
@@ -189,7 +189,7 @@ namespace MascotaFeliz.App.Consola
         private static void BuscarVeterinario(int idVeterinario)
         {
             var veterinario =  _repoVeterinario.GetVeterinario(idVeterinario);
-            Console.WriteLine(veterinario.Nombres +" "+ veterinario.TerjetaProfesional);
+            Console.WriteLine(veterinario.Nombres +" "+ veterinario.TarjetaProfesional);
         }
 
         //Listar Veterinario
@@ -228,7 +228,7 @@ namespace MascotaFeliz.App.Consola
                 veterinarioEncontrado.Apellidos = "Amalla";
                 veterinarioEncontrado.Direccion = "en las nubes";
                 veterinarioEncontrado.Telefono = "5555555";
-                veterinarioEncontrado.TerjetaProfesional = "GHY779";
+                veterinarioEncontrado.TarjetaProfesional = "GHY779";
             }
             _repoVeterinario.UpdateVeterinario(veterinarioEncontrado);
         }

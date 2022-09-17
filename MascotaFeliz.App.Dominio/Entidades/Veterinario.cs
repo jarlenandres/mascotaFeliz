@@ -1,8 +1,8 @@
 using System;
 namespace MascotaFeliz.App.Dominio
 {
-    public class Veterinario:Persona
+    public class Veterinario:Persona // : veterinario es hijo de persona
     {
-        public string TerjetaProfesional {get;set;}
+        public string TarjetaProfesional {set;get;}
     }
 }
