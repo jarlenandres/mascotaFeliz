@@ -23,7 +23,6 @@ namespace MascotaFeliz.App.Consola
             //EliminarDueno(1);
             //ListarDuenoFiltro();
             //EditarDueno(3);
-
             
             //AddMascota();
             //BuscarMascota(1);
