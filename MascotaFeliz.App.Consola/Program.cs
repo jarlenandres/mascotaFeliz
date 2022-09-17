@@ -36,7 +36,7 @@ namespace MascotaFeliz.App.Consola
             //ListarVeterinarios();
             //EliminarVeterinario(2);
             //ListarVeterinarioFiltro();
-            EditarVeterinario(6);
+            //EditarVeterinario(6);
 
             //AddHistoria();
 
