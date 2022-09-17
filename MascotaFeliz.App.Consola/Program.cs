@@ -18,7 +18,7 @@ namespace MascotaFeliz.App.Consola
             Console.WriteLine("Hello World!");
 
             //AddDueno();
-            ////BuscarDueno(1);
+            //BuscarDueno(1);
             //ListarDuenos();
             //EliminarDueno(1);
             //ListarDuenoFiltro();
