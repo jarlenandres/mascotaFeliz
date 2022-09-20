@@ -1,0 +1,82 @@
+@page
+@model MascotaFeliz.App.Frontend.Pages.ListaVisitasPyPModel
+@{
+    <header>
+        <h1>Mascota Feliz</h1>
+    </header>
+    <div id="form">
+        <div class="row">
+            <div class="col-2">
+                <label for="name">Buscar Visita</label>
+            </div>
+            <div class="col-8 mt-4">
+              <input aria-label="search" type="search" placeholder="Buscar Mascota"  class="form-control" >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-8 offset-lg-2 mt-4">
+                <!-- Tarjeta que contiene la tabla-->
+                <div class="card">
+                    <div class="card-body text-center">
+                        <label class="titulo">VisitasPyP</label>
+                        <table id="Tabla" class="table table-primary table-striped mt-4">
+                            <!--Cabecera de la tabla -->
+                            <thead>
+                              <tr>
+                                <!--Nombre columnas-->
+                                <th scope="col">Fecha Visita</th>
+                                <th scope="col">Temperatura</th>
+                                <th scope="col">Peso</th>
+                                <th scope="col">Frecuencia Respiratoria</th>
+                                <th scope="col">Frecuencia Cardiaca</th>
+                                <th scope="col">Estado Animo</th>
+                                <th scope="col">Recomendaciones</th>
+                                <th scope="col">Acciones</th>
+                              </tr>
+                            </thead>
+                            @foreach(var visitaPyP in Model.listaVisitasPyP)
+                            {
+
+                                <tr>
+                                    <!--Nombre columnas-->
+                                    <td>@visitaPyP.FechaVisita</td>
+                                    <td>@visitaPyP.Temperatura</td>
+                                    <td>@visitaPyP.Peso</td>
+                                    <td>@visitaPyP.FrecuenciaRespiratoria</td>
+                                    <td>@visitaPyP.FrecuenciaCardiaca</td>
+                                    <td>@visitaPyP.EstadoAnimo</td>
+                                    <td>@visitaPyP.Recomendaciones</td>
+                                    <td>
+                                        <a class="btn btn-primary table-btn" asp-page="./DetallesVisitasPyP" asp-route-visitaPyPId="@visitaPyP.Id" >
+                                            Detalles
+                                        </a>
+                                    </td>
+                                    <td><a class="btn btn-primary table-btn" asp-page="./EditarVisitasPyP" asp-route-visitaPyPId="@visitaPyP.Id">
+                                            Editar
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                          </table>
+                        <!--Boton primary que significa azul -->
+                        <button class="btn btn-primary float-end" name="redirect" class="button1" onClick="redirect2()">Nueva Visita</button>
+                        <button class="btn btn-primary float-start" name="redirect" class="button2" onClick="redirect()">Volver</button>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function redirect()
+        {
+        window.location.href="/Index";
+        }
+        function redirect2()
+        {
+        window.location.href="/VisitasPyP/CrearVisitasPyP";
+        }
+    </script>
+  
+}

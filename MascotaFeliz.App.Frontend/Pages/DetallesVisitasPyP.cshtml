@@ -1,0 +1,39 @@
+@page
+@model MascotaFeliz.App.Frontend.Pages.DetallesVisitasPyPModel
+@{
+    <header>
+        <h1>Detalles de la VisitaPyP</h1>
+    </header>
+
+    <div id="form">
+        <form id="waterform" method="post">
+            <div>
+                <label for="id">Id: @Model.visitaPyP.Id</label> 
+            </div>
+            <div class="formgroup" id="name-form">
+                <label for="cedula">Fecha Visita: @Model.visitaPyP.FechaVisita</label> 
+            </div>
+            <div class="formgroup" id="name-form">
+                <label for="name">Temperatura: @Model.visitaPyP.Temperatura </label> 
+            </div>
+            <div class="formgroup" id="name-form">
+                <label for="">Peso: @Model.visitaPyP.Peso </label> 
+            </div>
+            <div class="formgroup" id="name-form">
+                <label for="direccion">FrecuenciaRespiratoria : @Model.visitaPyP.FrecuenciaRespiratoria </label> 
+            </div>
+            <div class="formgroup" id="name-form">
+                <label for="telefono"> FrecuenciaCardiaca: @Model.visitaPyP.FrecuenciaCardiaca </label> 
+            </div>
+            <div class="formgroup" id="name-form">
+                <label for="correo">EstadoAnimo: @Model.visitaPyP.EstadoAnimo </label> 
+            </div>
+            <div class="formgroup" id="name-form">
+                <label for="correo">Recomendaciones: @Model.visitaPyP.Recomendaciones </label> 
+            </div>
+            <a class="btn btn-primary table-btn" asp-page="./ListaVisitasPyP"> Volver a lista </a>
+        </form>
+
+    </div>
+
+}

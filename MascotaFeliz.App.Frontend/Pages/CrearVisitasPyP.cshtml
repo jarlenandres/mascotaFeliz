@@ -1,0 +1,56 @@
+@page
+@model MascotaFeliz.App.Frontend.Pages.CrearVisitasPyPModel
+@{
+    
+    <header>
+        <h1>Mascota Feliz</h1>
+    </header>
+    <div id="form">
+        
+        <div class="fish" id="fish"></div>
+        <div class="fish" id="fish2"></div>
+        
+        <form id="waterform" method="post">
+
+        <div class="formgroup" id="name-form">
+            <label for="name">Fecha Visita*</label>
+            <input type="date" id="fechavisita" name="fechavisita" />
+        </div>
+
+        <div class="formgroup" id="name-form">
+            <label for="name">Temperatura*</label>
+            <input type="number" id="temperatura" name="temperatura" />
+        </div>
+
+        <div class="formgroup" id="name-form">
+            <label for="name">Peso*</label>
+            <input type="number" id="peso" name="peso" />
+        </div>
+
+        <div class="formgroup" id="name-form">
+            <label for="name">Frecuencia Respiratoria*</label>
+            <input type="number" id="frecRespiratoria" name="frecRespiratoria" />
+        </div>
+
+
+        <div class="formgroup" id="name-form">
+            <label for="name">Frecuencia Cardíaca*</label>
+            <input type="number" id="frecCardiaca" name="frecCardiaca" />
+        </div>
+
+        <div class="formgroup" id="name-form">
+            <label for="name">Estado de Animo*</label>
+            <input type="text" id="estadoAnimo" name="estadoAnimo" />
+        </div>
+
+        <div class="formgroup" id="name-form">
+            <label for="name">Recomendaciones*</label>
+            <input type="text" id="recomendaciones" name="recomendaciones" />
+        </div>
+
+        
+        <input type="submit" value="Registro de visita" href="/Visitas/ListaVisitasPyP"/>
+        </form>
+        <img src="veterinario.jpg" alt="">
+    </div>
+}
