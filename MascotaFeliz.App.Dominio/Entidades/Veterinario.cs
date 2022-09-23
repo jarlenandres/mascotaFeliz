@@ -3,6 +3,6 @@ namespace MascotaFeliz.App.Dominio
 {
     public class Veterinario:Persona
     {
-        public string TerjetaProfesional {get;set;}
+        public string TarjetaProfesional {get;set;}
     }
 }

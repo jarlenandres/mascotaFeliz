@@ -1,28 +1,36 @@
 ﻿@page
 @model MascotaFeliz.App.Frontend.Pages.AddMascotasModel
 @{
+    int idMascota = Model.mascota.Id;
 }
 
-<div class="div-content">
-                             
-    				<!--==============================content================================-->
-            <section id="content">         
-                <div class="container_16">
-                    <div class="wrapper">
-                         <div>
-                                <section class="FormularioMascotas">
-                                    <h4>Registrar Mascotas</h4>
-                                    <input class="controls" type="text" name="Nombre" id="Nombre" placeholder="Ingrese nombre de la Mascota">
-                                    <input class="controls" type="text" name="Color" id="Color" placeholder="Ingrese Color">
-                                    <input class="controls" type="text" name="Especie" id="Especie" placeholder="Ingrese Especie">
-                                    <input class="controls" type="text" name="Raza" id="Raza" placeholder="Ingrese Raza">
-                            
-                                    <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
-                                    <input class="botons" type="submit" value="Registrar">
-                                    <p><a href="#">¿Ya tengo Cuenta?</a></p>
-                                </section>
-                            </div>
-                    </div><!--the end of wrapper-->
-                </div>
-            </section>
-    		</div>
+<div class="container">
+<h4>Registrar nueva mascota</h4>
+    <form method="post" class="row g-3">
+        <input type="hidden" asp-for="mascota.Id">
+        <div class="col-6">
+            <label class="form-label">Nombre</label>
+            <input asp-for="mascota.Nombre" class="form-control" placeholder="Nombre de la mascota">
+        </div>
+        <div class="col-6">
+            <label class="form-label">Color</label>
+            <input asp-for="mascota.Color" class="form-control" placeholder="Color">
+        </div>
+        <div class="col-6">
+            <label class="form-label">Especie</label>
+            <input asp-for="mascota.Especie" class="form-control" placeholder="Especie">
+        </div>
+        <div class="col-6">
+            <label class="form-label">Raza</label>
+            <input asp-for="mascota.Raza" class="form-control" placeholder="Raza">
+        </div>
+        <div class="row g-3">
+            <div class="col-1">
+                <button type="submit" class="btn btn-secondary">Guardar</button>
+            </div>
+            <div class="col-2">
+                <a class="btn btn-secondary" asp-page="./ListaMascotas">Volver a la lista</a>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,36 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.DeleteMascotaModel
+@{
+}
+
+<div class="container">
+    <h4>Eliminar mascota</h4>
+    <form method="post" class="row g-3">
+        <input type="hidden" asp-for="mascota.Id">
+        <div class="col-6">
+            <label class="form-label">Nombre</label>
+            <input asp-for="mascota.Nombre" class="form-control" placeholder="Nombre de la mascota">
+        </div>
+        <div class="col-6">
+            <label class="form-label">Color</label>
+            <input asp-for="mascota.Color" class="form-control" placeholder="Color de la mascota">
+        </div>
+        <div class="col-6">
+            <label class="form-label">Especie</label>
+            <input asp-for="mascota.Especie" class="form-control" placeholder="Especie de la mascota">
+        </div>
+        <div class="col-6">
+            <label class="form-label">Raza</label>
+            <input asp-for="mascota.Raza" class="form-control" placeholder="Raza de la mascota">
+        </div>
+        <div class="row g-3">
+            <div class="col-1">
+                <button type="submit" class="btn btn-secondary">Eliminar</button>
+            </div>
+            <div class="col-2">
+                <a class="btn btn-secondary" asp-page="./ListaMascotas">Volver a la lista</a>
+            </div>
+        </div>
+    </form>
+</div>
+

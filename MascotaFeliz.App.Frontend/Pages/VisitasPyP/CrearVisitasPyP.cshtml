@@ -1,0 +1,49 @@
+@page
+@model MascotaFeliz.App.Frontend.Pages.CrearVisitasPyPModel
+@{
+}
+<div class="container">
+    <h4>Registrar nueva visita</h4>
+    <form class="row g-3" method="post">
+        <div class="col-6" id="name-form">
+            <label class="form-label" for="name">Fecha Visita</label>
+            <input class="form-control" type="date" id="fechavisita" name="fechavisita" placeholder="Fecha de visita" />
+        </div>
+        <div class="col-6" id="name-form">
+            <label class="form-label" for="name">Temperatura</label>
+            <input class="form-control" type="number" id="temperatura" name="temperatura" placeholder="Temperatura" />
+        </div>
+        <div class="col-6" id="name-form">
+            <label class="form-label" for="name">Peso</label>
+            <input class="form-control" type="number" id="peso" name="peso" placeholder="Peso" />
+        </div>
+        <div class="col-6" id="name-form">
+            <label class="form-label" for="name">Frecuencia Respiratoria</label>
+            <input class="form-control" type="number" id="frecRespiratoria" name="frecRespiratoria"
+                placeholder="Frecuencia respiratoria" />
+        </div>
+        <div class="col-6" id="name-form">
+            <label class="form-label" for="name">Frecuencia Cardíaca</label>
+            <input class="form-control" type="number" id="frecCardiaca" name="frecCardiaca" placeholder="Peso" />
+        </div>
+        <div class="col-6" id="name-form">
+            <label class="form-label" for="name">Estado de Animo</label>
+            <input class="form-control" type="text" id="estadoAnimo" name="estadoAnimo" placeholder="Estado de animo" />
+        </div>
+        <div class="col-6" id="name-form">
+            <label class="form-label" for="name">Recomendaciones</label>
+            <input class="form-control" type="text" id="recomendaciones" name="recomendaciones"
+                placeholder="Recomendaciones" />
+        </div>
+        <div class="row g-3">
+            <div class="col-2">
+                <input class="btn btn-secondary" type="submit" value="Registrar visita"
+                    href="/Visitas/ListaVisitasPyP" />
+                <img src="veterinario.jpg" alt="">
+            </div>
+            <div class="col-2">
+                <a asp-page="./ListaVisitasPyP" class="btn btn-secondary">Volver a la lista </a>
+            </div>
+        </div>
+    </form>
+</div>

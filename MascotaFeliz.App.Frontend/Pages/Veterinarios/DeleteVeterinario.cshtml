@@ -1,0 +1,39 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.DeleteVeterinarioModel
+@{
+}
+
+<div class="container">
+    <h4>Eliminar veterinario</h4>
+    <form method="post" class="row g-3">
+        <input type="hidden" asp-for="veterinario.Id">
+        <div class="col-6">
+            <label class="form-label">Nombre</label>
+            <input class="form-control" asp-for="veterinario.Nombres" placeholder="Nombre">
+        </div>
+        <div class="col-6">
+            <label class="form-label">Apellidos</label>
+            <input class="form-control" asp-for="veterinario.Apellidos" placeholder="Apellidos">
+        </div>
+        <div class="col-6">
+            <label class="form-label">Direccion</label>
+            <input class="form-control" asp-for="veterinario.Direccion" placeholder="Dirección">
+        </div>
+        <div class="col-6">
+            <label class="form-label">Teléfono</label>
+            <input class="form-control" asp-for="veterinario.Telefono" placeholder="Teléfono">
+        </div>
+        <div class="col-6">
+            <label class="form-label">Tarjeta profesional</label>
+            <input class="form-control" asp-for="veterinario.TarjetaProfesional" placeholder="Tarjeta profesional">
+        </div>
+        <div class="row g-3">
+            <div class="col-1">
+                <button type="submit" class="btn btn-secondary">Eliminar</button>
+            </div>
+            <div class="col-2">
+                <a class="btn btn-secondary" asp-page="./ListaVeterinarios">Volver a la lista</a>
+            </div>
+        </div>
+    </form>
+</div>
